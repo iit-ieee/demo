@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - IEEE Student Branch</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation Header -->
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">IEEE Illinois Tech</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="team.html">Team</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="register.html" class="active">Register</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <h1 class="section-title mt-3">Member Registration</h1>
+            <p class="section-subtitle">Join the IEEE Illinois Tech Student Branch community!</p>
+
+            <div class="contact-grid mt-3" style="grid-template-columns: 1fr;">
+                <!-- Registration Form -->
+                <div class="contact-form" style="max-width: 700px; margin: 0 auto;">
+                    <h2 style="color: var(--primary-blue); margin-bottom: 1rem;">Register as a Member</h2>
+                    <p style="margin-bottom: 1.5rem; color: var(--text-light);">
+                        Fill out the form below to register for IEEE Illinois Tech Student Branch membership. 
+                        You'll receive a confirmation email at <strong>nithikroshan03@gmail.com</strong> with your registration details.
+                    </p>
+
+                    <form id="registrationForm" onsubmit="handleRegistration(event)">
+                        <div class="form-group">
+                            <label for="fullName">Full Name *</label>
+                            <input type="text" id="fullName" name="fullName" required placeholder="Enter your full name">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required placeholder="your.email@iit.edu">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="studentId">Student ID</label>
+                            <input type="text" id="studentId" name="studentId" placeholder="A12345678">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="major">Major / Program *</label>
+                            <input type="text" id="major" name="major" required placeholder="e.g., Computer Science, Electrical Engineering">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="year">Academic Year *</label>
+                            <select id="year" name="year" required>
+                                <option value="">Select your year</option>
+                                <option value="Freshman">Freshman</option>
+                                <option value="Sophomore">Sophomore</option>
+                                <option value="Junior">Junior</option>
+                                <option value="Senior">Senior</option>
+                                <option value="Graduate">Graduate Student</option>
+                                <option value="PhD">Ph.D. Student</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+1 (312) 123-4567">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="ieeeNumber">IEEE Membership Number (if applicable)</label>
+                            <input type="text" id="ieeeNumber" name="ieeeNumber" placeholder="12345678">
+                            <small style="color: var(--text-light); font-size: 0.85rem;">
+                                Not an IEEE member yet? <a href="https://www.ieee.org/membership/join/index.html" target="_blank" style="color: var(--accent-blue);">Join IEEE</a>
+                            </small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="interests">Areas of Interest</label>
+                            <textarea id="interests" name="interests" rows="3" placeholder="e.g., AI/ML, Robotics, Web Development, IoT, Cybersecurity..."></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                                <input type="checkbox" id="mailingList" name="mailingList" checked style="width: auto;">
+                                <span>Subscribe to our mailing list for event updates</span>
+                            </label>
+                        </div>
+
+                        <div class="form-group">
+                            <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                                <input type="checkbox" id="termsAgree" name="termsAgree" required style="width: auto;">
+                                <span>I agree to share my information with IEEE Illinois Tech Student Branch *</span>
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Complete Registration</button>
+                    </form>
+
+                    <div id="successMessage" style="display: none; margin-top: 2rem; padding: 1.5rem; background-color: #d4edda; border: 1px solid #c3e6cb; border-radius: 8px; color: #155724;">
+                        <h3 style="margin-bottom: 0.5rem;">✅ Registration Successful!</h3>
+                        <p>Thank you for registering! Your information has been sent to our team. You'll receive a confirmation email shortly.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Benefits Section -->
+            <div class="mt-3 mb-3">
+                <h2 class="section-title">Membership Benefits</h2>
+                
+                <div class="cards-grid mt-2">
+                    <div class="card">
+                        <div class="card-icon">🎓</div>
+                        <h3>Technical Workshops</h3>
+                        <p>Access to hands-on workshops on AI, IoT, web development, and more cutting-edge technologies.</p>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-icon">🤝</div>
+                        <h3>Networking Events</h3>
+                        <p>Connect with industry professionals, alumni, and fellow students passionate about technology.</p>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-icon">💻</div>
+                        <h3>Competitions & Hackathons</h3>
+                        <p>Participate in exciting challenges and showcase your skills on regional and national platforms.</p>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-icon">📚</div>
+                        <h3>IEEE Resources</h3>
+                        <p>Access to IEEE Xplore digital library with millions of technical papers and research documents.</p>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-icon">🚀</div>
+                        <h3>Career Development</h3>
+                        <p>Resume building, interview prep, and career guidance from industry mentors and alumni.</p>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-icon">🌟</div>
+                        <h3>Leadership Opportunities</h3>
+                        <p>Take on leadership roles and build valuable skills while organizing events and projects.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+   <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 IEEE Illinois Tech Student Branch. All rights reserved.</p>
+            
+            <div class="social-links">
+                <a href="https://www.instagram.com/ieee.illinoistech/" target="_blank" title="Instagram">📷</a>
+                <a href="mailto:ieee@iit.edu" title="Email">✉️</a>
+            </div>
+            
+            <div class="footer-links">
+                <a href="https://www.ieee.org/" target="_blank">IEEE.org</a>
+                <a href="https://www.iit.edu/" target="_blank">Illinois Tech</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Navigation Toggle
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                hamburger.classList.remove('active');
+            });
+        });
+
+        // Handle Registration Form Submission
+        function handleRegistration(event) {
+            event.preventDefault();
+            
+            // Get form data
+            const formData = {
+                fullName: document.getElementById('fullName').value,
+                email: document.getElementById('email').value,
+                studentId: document.getElementById('studentId').value,
+                major: document.getElementById('major').value,
+                year: document.getElementById('year').value,
+                phone: document.getElementById('phone').value,
+                ieeeNumber: document.getElementById('ieeeNumber').value,
+                interests: document.getElementById('interests').value,
+                mailingList: document.getElementById('mailingList').checked,
+                timestamp: new Date().toLocaleString()
+            };
+
+            // Create email body
+            const emailSubject = `New IEEE Member Registration: ${formData.fullName}`;
+            const emailBody = `
+New IEEE Illinois Tech Student Branch Member Registration
+
+Name: ${formData.fullName}
+Email: ${formData.email}
+Student ID: ${formData.studentId || 'Not provided'}
+Major/Program: ${formData.major}
+Academic Year: ${formData.year}
+Phone: ${formData.phone || 'Not provided'}
+IEEE Membership #: ${formData.ieeeNumber || 'Not a member yet'}
+Areas of Interest: ${formData.interests || 'Not specified'}
+Mailing List: ${formData.mailingList ? 'Yes' : 'No'}
+
+Registration Time: ${formData.timestamp}
+            `.trim();
+
+            // Create mailto link
+            const mailtoLink = `mailto:nithikroshan03@gmail.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+            
+            // Open email client
+            window.location.href = mailtoLink;
+
+            // Show success message
+            document.getElementById('registrationForm').style.display = 'none';
+            document.getElementById('successMessage').style.display = 'block';
+
+            // Optional: Also show alert
+            setTimeout(() => {
+                alert('Your email client should open with the registration details. Please send the email to complete your registration.');
+            }, 500);
+
+            // Note: In a production environment, you would typically send this to a backend server
+            // that would handle email sending via services like SendGrid, AWS SES, or Nodemailer
+            
+            // For a real implementation without a backend, you could use:
+            // 1. EmailJS (https://www.emailjs.com/)
+            // 2. Formspree (https://formspree.io/)
+            // 3. Google Forms API
+            // Example with EmailJS:
+            /*
+            emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', formData)
+                .then(function(response) {
+                    document.getElementById('registrationForm').style.display = 'none';
+                    document.getElementById('successMessage').style.display = 'block';
+                }, function(error) {
+                    alert('Registration failed. Please try again or contact us directly.');
+                });
+            */
+        }
+    </script>
+</body>
+</html>

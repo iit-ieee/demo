@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events - IEEE Student Branch</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation Header -->
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">IEEE Illinois Tech</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="team.html">Team</a></li>
+                <li><a href="events.html" class="active">Events</a></li>
+                <li><a href="register.html">Register</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <h1 class="section-title mt-3">Events</h1>
+            <p class="section-subtitle">Stay updated with our latest workshops, hackathons, and tech talks</p>
+
+            <!-- Upcoming Events Section -->
+            <section class="mt-3">
+                <h2 style="color: var(--primary-blue); font-size: 1.8rem; margin-bottom: 1.5rem;">
+                    📅 Upcoming Events
+                </h2>
+                <!-- Events will be dynamically loaded here by events.js -->
+                <div id="upcoming-events"></div>
+            </section>
+
+            <!-- Past Events Section -->
+            <section class="mt-3">
+                <h2 style="color: var(--primary-blue); font-size: 1.8rem; margin-bottom: 1.5rem;">
+                    📚 Past Events
+                </h2>
+                <!-- Events will be dynamically loaded here by events.js -->
+                <div id="past-events"></div>
+            </section>
+
+            <!-- Information Box -->
+            <div class="card mt-3 mb-3" style="background-color: var(--light-gray); border-top: 4px solid var(--accent-blue);">
+                <h3 style="color: var(--primary-blue);">📝 How to Add New Events</h3>
+                <p>
+                    To add or update events on this page, simply edit the <code>js/events.js</code> file. 
+                    Add your event to the <code>events</code> array with the following information:
+                </p>
+                <ul style="margin-left: 1.5rem; color: var(--text-dark);">
+                    <li><strong>title:</strong> Name of the event</li>
+                    <li><strong>date:</strong> Date in YYYY-MM-DD format (e.g., "2025-12-15")</li>
+                    <li><strong>time:</strong> Time of the event</li>
+                    <li><strong>location:</strong> Venue or location</li>
+                    <li><strong>description:</strong> Brief description of the event</li>
+                    <li><strong>type:</strong> Category (Workshop, Hackathon, Tech Talk, etc.)</li>
+                    <li><strong>registerLink:</strong> Registration URL (optional)</li>
+                </ul>
+                <p style="margin-top: 1rem;">
+                    The website will automatically sort events into "Upcoming" and "Past" based on today's date!
+                </p>
+            </div>
+
+            <!-- Call to Action -->
+            <div class="text-center mt-3 mb-3">
+                <h2 class="section-title">Have Questions?</h2>
+                <p class="section-subtitle">Reach out to us for more information about our events</p>
+                <a href="contact.html" class="btn btn-primary">Contact Us</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+   <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 IEEE Illinois Tech Student Branch. All rights reserved.</p>
+            
+            <div class="social-links">
+                <a href="https://www.instagram.com/ieee.illinoistech/" target="_blank" title="Instagram">📷</a>
+                <a href="mailto:ieee@iit.edu" title="Email">✉️</a>
+            </div>
+            
+            <div class="footer-links">
+                <a href="https://www.ieee.org/" target="_blank">IEEE.org</a>
+                <a href="https://www.iit.edu/" target="_blank">Illinois Tech</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/events.js"></script>
+    <script>
+        // Mobile Navigation Toggle
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                hamburger.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>

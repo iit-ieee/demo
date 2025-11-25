@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IEEE Student Branch - Home</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation Header -->
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">IEEE Illinois Tech</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="team.html">Team</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="register.html">Register</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <!-- Video Background -->
+            <video autoplay muted loop playsinline class="hero-video" id="heroVideo">
+                <!-- Your IEEE Data Center Video (Primary) -->
+                <source src="assets/ieee-video.mp4" type="video/mp4">
+                <source src="C:\Users\nithi\Downloads\ieee-data-center-homepage-video.mp4" type="video/mp4">
+                <!-- Backup Technology & Engineering Videos -->
+                <source src="https://cdn.pixabay.com/video/2019/11/28/29206-380849917_large.mp4" type="video/mp4">
+                <source src="https://videos.pexels.com/video-files/2278095/2278095-hd_1920_1080_25fps.mp4" type="video/mp4">
+                <source src="https://videos.pexels.com/video-files/3129671/3129671-uhd_2560_1440_25fps.mp4" type="video/mp4">
+                <source src="https://videos.pexels.com/video-files/3130182/3130182-uhd_2560_1440_25fps.mp4" type="video/mp4">
+            </video>
+            
+            <!-- Overlay for better text readability -->
+            <div class="hero-overlay"></div>
+            
+            <!-- Video Controls -->
+            <div class="video-controls">
+                <button class="video-btn" id="playPauseBtn" onclick="toggleVideo()" title="Pause/Play" aria-label="Pause video">⏸️</button>
+                <button class="video-btn" id="muteBtn" onclick="toggleMute()" title="Mute/Unmute" aria-label="Mute video">🔊</button>
+            </div>
+            
+            <div class="hero-content-wrapper">
+                <div class="container">
+                    <h1>IEEE Illinois Tech Student Branch</h1>
+                    <p>Connecting students with technology, innovation, and community</p>
+                    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                        <a href="register.html" class="btn">Register Now</a>
+                        <a href="events.html" class="btn">View Events</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Highlights Section -->
+        <section>
+            <div class="container">
+                <h2 class="section-title">What We Do</h2>
+                <p class="section-subtitle">Empowering students through technology and innovation</p>
+                
+                <div class="cards-grid">
+                    <div class="card">
+                        <div class="card-icon">🎓</div>
+                        <h3>Workshops</h3>
+                        <p>Hands-on technical workshops covering cutting-edge technologies, from AI and machine learning to web development and IoT.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-icon">💻</div>
+                        <h3>Hackathons</h3>
+                        <p>Participate in exciting hackathons where you can build innovative solutions, collaborate with peers, and win amazing prizes.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-icon">🤝</div>
+                        <h3>Networking</h3>
+                        <p>Connect with industry professionals, alumni, and fellow students to build lasting relationships and explore career opportunities.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Upcoming Events Preview -->
+        <section class="bg-light">
+            <div class="container">
+                <h2 class="section-title">Upcoming Events</h2>
+                <p class="section-subtitle">Don't miss out on our exciting upcoming activities!</p>
+                
+                <!-- Events will be dynamically loaded here by events.js -->
+                <div id="events-preview"></div>
+                
+                <div class="text-center mt-3">
+                    <a href="events.html" class="btn btn-primary">See All Events</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 IEEE Illinois Tech Student Branch. All rights reserved.</p>
+            
+            <div class="social-links">
+                <a href="https://www.instagram.com/ieee.illinoistech/" target="_blank" title="Instagram">📷</a>
+                <a href="mailto:ieee@iit.edu" title="Email">✉️</a>
+            </div>
+            
+            <div class="footer-links">
+                <a href="https://www.ieee.org/" target="_blank">IEEE.org</a>
+                <a href="https://www.iit.edu/" target="_blank">Illinois Tech</a>
+            </div>
+        </div>
+    </footer>
+    <!-- JavaScript -->
+    <script src="js/events.js"></script>
+    <script>
+        // Mobile Navigation Toggle
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                hamburger.classList.remove('active');
+            });
+        });
+
+        // Video Controls
+        function toggleVideo() {
+            const video = document.getElementById('heroVideo');
+            const btn = document.getElementById('playPauseBtn');
+            
+            if (video.paused) {
+                video.play();
+                btn.innerHTML = '⏸️';
+                btn.title = 'Pause';
+            } else {
+                video.pause();
+                btn.innerHTML = '▶️';
+                btn.title = 'Play';
+            }
+        }
+
+        function toggleMute() {
+            const video = document.getElementById('heroVideo');
+            const btn = document.getElementById('muteBtn');
+            
+            if (video.muted) {
+                video.muted = false;
+                btn.innerHTML = '🔊';
+                btn.title = 'Mute';
+            } else {
+                video.muted = true;
+                btn.innerHTML = '🔇';
+                btn.title = 'Unmute';
+            }
+        }
+
+        // Ensure video plays on load
+        document.addEventListener('DOMContentLoaded', function() {
+            const video = document.getElementById('heroVideo');
+            
+            // Auto-play video
+            video.play().catch(function(error) {
+                console.log('Video autoplay was prevented:', error);
+            });
+            
+            // Handle video errors
+            video.addEventListener('error', function() {
+                console.log('Error loading video');
+            });
+        });
+    </script>
+</body>
+</html>

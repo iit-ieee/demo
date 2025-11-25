@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team - IEEE Student Branch</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation Header -->
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">IEEE Illinois Tech</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="team.html" class="active">Team</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="register.html">Register</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <h1 class="section-title mt-3">Our Team</h1>
+            <p class="section-subtitle">Meet the dedicated individuals leading our student branch</p>
+
+            <!-- Executive Board -->
+            <h2 class="section-title mt-3" style="font-size: 1.5rem;">Executive Board</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-photo">SN</div>
+                    <h3 class="member-name">Sreya Niketha</h3>
+                    <p class="member-position">President</p>
+                    <p class="member-description">MS Electrical Engineering</p>
+                </div>
+
+                <div class="team-member">
+                    <div class="member-photo">MS</div>
+                    <h3 class="member-name">Madhu Siddharth</h3>
+                    <p class="member-position">Vice President</p>
+                    <p class="member-description">MAS Data Science</p>
+                </div>
+
+                <div class="team-member">
+                    <div class="member-photo">SS</div>
+                    <h3 class="member-name">Shuvangee Seth</h3>
+                    <p class="member-position">Secretary</p>
+                    <p class="member-description">BS Computer Science</p>
+                </div>
+
+                <div class="team-member">
+                    <div class="member-photo">JM</div>
+                    <h3 class="member-name">Jayandhan Senthil Murugan</h3>
+                    <p class="member-position">Treasurer</p>
+                    <p class="member-description">MAS Data Science</p>
+                </div>
+
+                <div class="team-member">
+                    <div class="member-photo">YI</div>
+                    <h3 class="member-name">Yslam Ismailov</h3>
+                    <p class="member-position">Web-Dev</p>
+                    <p class="member-description">BS Computer Science</p>
+                </div>
+
+                <div class="team-member">
+                    <div class="member-photo">NR</div>
+                    <h3 class="member-name">Nithik Rushan</h3>
+                    <p class="member-position">Web-Dev</p>
+                    <p class="member-description">MS Artifial Intelligence</p>
+                </div>
+
+                <div class="team-member">
+                    <div class="member-photo">CE</div>
+                    <h3 class="member-name">Chase Enfield</h3>
+                    <p class="member-position">Community Engagement</p>
+                    <p class="member-description">BS Electrical Engineering</p>
+                </div>
+
+                <div class="team-member">
+                    <div class="member-photo">SG</div>
+                    <h3 class="member-name">Siddharth Geddam</h3>
+                    <p class="member-position">Community Engagement</p>
+                    <p class="member-description">MAS Computer Science</p>
+                </div>
+
+                <div class="team-member">
+                    <div class="member-photo">KB</div>
+                    <h3 class="member-name">Karunesh Bamanjogi</h3>
+                    <p class="member-position">Public Relations</p>
+                    <p class="member-description">MAS Cyber Forensics and Security</p>
+                </div>
+
+                <div class="team-member">
+                    <div class="member-photo">SR</div>
+                    <h3 class="member-name">Suchitra Rajkumar</h3>
+                    <p class="member-position">Events Lead</p>
+                    <p class="member-description">MS Computer Science</p>
+                </div>
+            </div>
+
+            <!-- Faculty Advisor -->
+            <h2 class="section-title mt-3" style="font-size: 1.5rem;">Faculty Advisor</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-photo" style="background-color: var(--accent-blue);">DR</div>
+                    <h3 class="member-name">Dr. Rajesh Kumar</h3>
+                    <p class="member-position">Faculty Advisor</p>
+                    <p class="member-description">Guiding and mentoring the student branch activities</p>
+                </div>
+            </div>
+
+            <!-- Join the Team -->
+            <div class="text-center mt-3 mb-3">
+                <h2 class="section-title">Want to Join Our Team?</h2>
+                <p class="section-subtitle">We're always looking for passionate individuals to help us grow</p>
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="register.html" class="btn btn-primary">Register as Member</a>
+                    <a href="contact.html" class="btn btn-primary">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 IEEE Illinois Tech Student Branch. All rights reserved.</p>
+            
+            <div class="social-links">
+                <a href="https://www.instagram.com/ieee.illinoistech/" target="_blank" title="Instagram">📷</a>
+                <a href="mailto:ieee@iit.edu" title="Email">✉️</a>
+            </div>
+            
+            <div class="footer-links">
+                <a href="https://www.ieee.org/" target="_blank">IEEE.org</a>
+                <a href="https://www.iit.edu/" target="_blank">Illinois Tech</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Navigation Toggle
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                hamburger.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
