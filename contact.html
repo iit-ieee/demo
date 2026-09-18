@@ -71,8 +71,8 @@
                             <span class="contact-item-icon">📧</span>
                             <div>
                                 <strong>Email</strong><br>
-                                <a href="mailto:ieee@iit.edu" style="color: var(--accent-blue); text-decoration: none;">
-                                    ieee@iit.edu
+                                <a href="mailto:srajkumar@hawk.illinoistech.edu" style="color: var(--accent-blue); text-decoration: none;">
+                                    srajkumar@hawk.illinoistech.edu
                                 </a>
                             </div>
                         </div>
@@ -97,14 +97,6 @@
                             </div>
                         </div>
 
-                        <div class="contact-item">
-                            <span class="contact-item-icon">⏰</span>
-                            <div>
-                                <strong>Office Hours</strong><br>
-                                Monday - Friday<br>
-                                2:00 PM - 5:00 PM
-                            </div>
-                        </div>
                     </div>
 
                     <!-- Social Media -->
@@ -159,21 +151,22 @@
     </main>
 
     <!-- Footer -->
-   <footer>
-        <div class="footer-content">
-            <p>&copy; 2025 IEEE Illinois Tech Student Branch. All rights reserved.</p>
-            
-            <div class="social-links">
-                <a href="https://www.instagram.com/ieee.illinoistech/" target="_blank" title="Instagram">📷</a>
-                <a href="mailto:ieee@iit.edu" title="Email">✉️</a>
-            </div>
-            
-            <div class="footer-links">
-                <a href="https://www.ieee.org/" target="_blank">IEEE.org</a>
-                <a href="https://www.iit.edu/" target="_blank">Illinois Tech</a>
-            </div>
-        </div>
-    </footer>
+       <footer id="main-footer"></div>
+
+    <!-- JavaScript -->
+    <script src="js/events.js"></script>
+    <script>
+        // Inline layout import
+        fetch('footer.html')
+            .then(res => res.text())
+            .then(html => {
+                document.getElementById('main-footer').innerHTML = html;
+                
+                /* Execute scripts inside the imported HTML manually */
+                const script = document.getElementById('main-footer').querySelector('script');
+                if (script) eval(script.innerText);
+            });
+    </script>
 
     <!-- JavaScript -->
     <script>

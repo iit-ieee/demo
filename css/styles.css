@@ -426,7 +426,6 @@ section {
 }
 
 .contact-form {
-    background-color: var(--light-gray);
     padding: 2rem;
     border-radius: 8px;
 }
@@ -485,14 +484,16 @@ section {
 footer {
     background-color: var(--primary-blue);
     color: var(--white);
-    padding: 2rem;
-    text-align: center;
+    padding: 1rem;
+    text-align: center;;
 }
 
 .footer-content {
     max-width: 1200px;
     margin: 0 auto;
 }
+
+
 
 .social-links {
     display: flex;
@@ -511,6 +512,49 @@ footer {
 .social-links a:hover {
     color: var(--accent-blue);
 }
+
+.social-links a svg {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+    vertical-align: middle;
+}
+
+.social-links a {
+    color: #ffffff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.social-links a:hover {
+    color: #0e0f0f;
+    transform: translateY(-2px);
+}
+
+.register-container {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.register-button {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #00629B;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 6px;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.register-button:hover {
+    background-color: #004F7C;
+    transform: translateY(-2px);
+}
+
 
 .footer-links {
     margin-top: 1rem;

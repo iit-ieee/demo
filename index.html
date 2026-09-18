@@ -72,19 +72,16 @@
                 
                 <div class="cards-grid">
                     <div class="card">
-                        <div class="card-icon">🎓</div>
                         <h3>Research</h3>
                         <p>Our club actively engages in innovative research and welcomes new ideas from all members.</p>
                     </div>
                     
                     <div class="card">
-                        <div class="card-icon">💻</div>
                         <h3>Conferences</h3>
                         <p>IEEE conferences connect students with global innovation, research opportunities, and professional collaboration.</p>
                     </div>
                     
                     <div class="card">
-                        <div class="card-icon">🤝</div>
                         <h3>Networking</h3>
                         <p>Connect with industry professionals, alumni, and fellow students to build lasting relationships and explore career opportunities.</p>
                     </div>
@@ -96,11 +93,11 @@
          <section class="bg-light">
         <div class="container">
             <h2 class="section-title">Upcoming Events</h2>
-            <p class="section-subtitle">Spring events coming soon!</p>
+            <p class="section-subtitle">Fall events coming soon!</p>
             
             <div class="text-center mt-3">
                 <p style="font-size: 1.2rem; color: var(--accent-blue);">
-                    🌸 Stay tuned for our Spring 2025 event schedule!
+                    🌸 Stay tuned for our Fall 2026 event schedule!
                 </p>
         </div>
     </div>
@@ -108,21 +105,24 @@
     </main>
 
     <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <p>&copy; 2025 IEEE Illinois Tech Student Branch. All rights reserved.</p>
-            
-            <div class="social-links">
-                <a href="https://www.instagram.com/ieee.illinoistech/" target="_blank" title="Instagram">📷</a>
-                <a href="mailto:ieee@iit.edu" title="Email">✉️</a>
-            </div>
-            
-            <div class="footer-links">
-                <a href="https://www.ieee.org/" target="_blank">IEEE.org</a>
-                <a href="https://www.iit.edu/" target="_blank">Illinois Tech</a>
-            </div>
-        </div>
-    </footer>
+
+    <footer id="main-footer"></div>
+
+    <!-- JavaScript -->
+    <script src="js/events.js"></script>
+    <script>
+        // Inline layout import
+        fetch('footer.html')
+            .then(res => res.text())
+            .then(html => {
+                document.getElementById('main-footer').innerHTML = html;
+                
+                /* Execute scripts inside the imported HTML manually */
+                const script = document.getElementById('main-footer').querySelector('script');
+                if (script) eval(script.innerText);
+            });
+    </script>
+        
     <!-- JavaScript -->
     <script src="js/events.js"></script>
     <script>

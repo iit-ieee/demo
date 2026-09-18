@@ -35,86 +35,13 @@
 
             <div class="contact-grid mt-3" style="grid-template-columns: 1fr;">
                 <!-- Registration Form -->
-                <div class="contact-form" style="max-width: 700px; margin: 0 auto;">
-                    <h2 style="color: var(--primary-blue); margin-bottom: 1rem;">Register as a Member</h2>
-                    <p style="margin-bottom: 1.5rem; color: var(--text-light);">
-                        Fill out the form below to register for IEEE Illinois Tech Student Branch membership. 
-                        You'll receive a confirmation email at <strong>nithikroshan03@gmail.com</strong> with your registration details.
-                    </p>
-
-                    <form id="registrationForm" onsubmit="handleRegistration(event)">
-                        <div class="form-group">
-                            <label for="fullName">Full Name *</label>
-                            <input type="text" id="fullName" name="fullName" required placeholder="Enter your full name">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="email">Email Address *</label>
-                            <input type="email" id="email" name="email" required placeholder="your.email@iit.edu">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="studentId">Student ID</label>
-                            <input type="text" id="studentId" name="studentId" placeholder="A12345678">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="major">Major / Program *</label>
-                            <input type="text" id="major" name="major" required placeholder="e.g., Computer Science, Electrical Engineering">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="year">Academic Year *</label>
-                            <select id="year" name="year" required>
-                                <option value="">Select your year</option>
-                                <option value="Freshman">Freshman</option>
-                                <option value="Sophomore">Sophomore</option>
-                                <option value="Junior">Junior</option>
-                                <option value="Senior">Senior</option>
-                                <option value="Graduate">Graduate Student</option>
-                                <option value="PhD">Ph.D. Student</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" name="phone" placeholder="+1 (312) 123-4567">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="ieeeNumber">IEEE Membership Number (if applicable)</label>
-                            <input type="text" id="ieeeNumber" name="ieeeNumber" placeholder="12345678">
-                            <small style="color: var(--text-light); font-size: 0.85rem;">
-                                Not an IEEE member yet? <a href="https://www.ieee.org/membership/join/index.html" target="_blank" style="color: var(--accent-blue);">Join IEEE</a>
-                            </small>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="interests">Areas of Interest</label>
-                            <textarea id="interests" name="interests" rows="3" placeholder="e.g., AI/ML, Robotics, Web Development, IoT, Cybersecurity..."></textarea>
-                        </div>
-
-                        <div class="form-group">
-                            <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
-                                <input type="checkbox" id="mailingList" name="mailingList" checked style="width: auto;">
-                                <span>Subscribe to our mailing list for event updates</span>
-                            </label>
-                        </div>
-
-                        <div class="form-group">
-                            <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
-                                <input type="checkbox" id="termsAgree" name="termsAgree" required style="width: auto;">
-                                <span>I agree to share my information with IEEE Illinois Tech Student Branch *</span>
-                            </label>
-                        </div>
-
-                        <button type="submit" class="btn btn-primary" style="width: 100%;">Complete Registration</button>
-                    </form>
-
-                    <div id="successMessage" style="display: none; margin-top: 2rem; padding: 1.5rem; background-color: #d4edda; border: 1px solid #c3e6cb; border-radius: 8px; color: #155724;">
-                        <h3 style="margin-bottom: 0.5rem;">✅ Registration Successful!</h3>
-                        <p>Thank you for registering! Your information has been sent to our team. You'll receive a confirmation email shortly.</p>
-                    </div>
+                <div class="contact-form">
+                     <div class="register-container" style="margin: -2em">
+                    <a href="https://312.iit.edu/IEEE/club_signup" class="register-button">
+                        Register Now
+                    </a>
+                </div>
+            
                 </div>
             </div>
 
@@ -164,21 +91,22 @@
     </main>
 
     <!-- Footer -->
-   <footer>
-        <div class="footer-content">
-            <p>&copy; 2025 IEEE Illinois Tech Student Branch. All rights reserved.</p>
-            
-            <div class="social-links">
-                <a href="https://www.instagram.com/ieee.illinoistech/" target="_blank" title="Instagram">📷</a>
-                <a href="mailto:ieee@iit.edu" title="Email">✉️</a>
-            </div>
-            
-            <div class="footer-links">
-                <a href="https://www.ieee.org/" target="_blank">IEEE.org</a>
-                <a href="https://www.iit.edu/" target="_blank">Illinois Tech</a>
-            </div>
-        </div>
-    </footer>
+      <footer id="main-footer"></div>
+
+    <!-- JavaScript -->
+    <script src="js/events.js"></script>
+    <script>
+        // Inline layout import
+        fetch('footer.html')
+            .then(res => res.text())
+            .then(html => {
+                document.getElementById('main-footer').innerHTML = html;
+                
+                /* Execute scripts inside the imported HTML manually */
+                const script = document.getElementById('main-footer').querySelector('script');
+                if (script) eval(script.innerText);
+            });
+    </script>
 
     <!-- JavaScript -->
     <script>
