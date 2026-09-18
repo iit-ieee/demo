@@ -51,37 +51,37 @@
                 
                 <div class="cards-grid mt-2">
                     <div class="card">
-                        <div class="card-icon">🎓</div>
+                        <!-- <div class="card-icon">🎓</div> -->
                         <h3>Technical Workshops</h3>
                         <p>Access to hands-on workshops on AI, IoT, web development, and more cutting-edge technologies.</p>
                     </div>
 
                     <div class="card">
-                        <div class="card-icon">🤝</div>
+                        <!-- <div class="card-icon">🤝</div> -->
                         <h3>Networking Events</h3>
                         <p>Connect with industry professionals, alumni, and fellow students passionate about technology.</p>
                     </div>
 
                     <div class="card">
-                        <div class="card-icon">💻</div>
+                        <!-- <div class="card-icon">💻</div> -->
                         <h3>Competitions & Hackathons</h3>
                         <p>Participate in exciting challenges and showcase your skills on regional and national platforms.</p>
                     </div>
 
                     <div class="card">
-                        <div class="card-icon">📚</div>
+                        <!-- <div class="card-icon">📚</div> -->
                         <h3>IEEE Resources</h3>
                         <p>Access to IEEE Xplore digital library with millions of technical papers and research documents.</p>
                     </div>
 
                     <div class="card">
-                        <div class="card-icon">🚀</div>
+                        <!-- <div class="card-icon">🚀</div> -->
                         <h3>Career Development</h3>
                         <p>Resume building, interview prep, and career guidance from industry mentors and alumni.</p>
                     </div>
 
                     <div class="card">
-                        <div class="card-icon">🌟</div>
+                        <!-- <div class="card-icon">🌟</div> -->
                         <h3>Leadership Opportunities</h3>
                         <p>Take on leadership roles and build valuable skills while organizing events and projects.</p>
                     </div>
@@ -127,75 +127,6 @@
             });
         });
 
-        // Handle Registration Form Submission
-        function handleRegistration(event) {
-            event.preventDefault();
-            
-            // Get form data
-            const formData = {
-                fullName: document.getElementById('fullName').value,
-                email: document.getElementById('email').value,
-                studentId: document.getElementById('studentId').value,
-                major: document.getElementById('major').value,
-                year: document.getElementById('year').value,
-                phone: document.getElementById('phone').value,
-                ieeeNumber: document.getElementById('ieeeNumber').value,
-                interests: document.getElementById('interests').value,
-                mailingList: document.getElementById('mailingList').checked,
-                timestamp: new Date().toLocaleString()
-            };
-
-            // Create email body
-            const emailSubject = `New IEEE Member Registration: ${formData.fullName}`;
-            const emailBody = `
-New IEEE Illinois Tech Student Branch Member Registration
-
-Name: ${formData.fullName}
-Email: ${formData.email}
-Student ID: ${formData.studentId || 'Not provided'}
-Major/Program: ${formData.major}
-Academic Year: ${formData.year}
-Phone: ${formData.phone || 'Not provided'}
-IEEE Membership #: ${formData.ieeeNumber || 'Not a member yet'}
-Areas of Interest: ${formData.interests || 'Not specified'}
-Mailing List: ${formData.mailingList ? 'Yes' : 'No'}
-
-Registration Time: ${formData.timestamp}
-            `.trim();
-
-            // Create mailto link
-            const mailtoLink = `mailto:nithikroshan03@gmail.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
-            
-            // Open email client
-            window.location.href = mailtoLink;
-
-            // Show success message
-            document.getElementById('registrationForm').style.display = 'none';
-            document.getElementById('successMessage').style.display = 'block';
-
-            // Optional: Also show alert
-            setTimeout(() => {
-                alert('Your email client should open with the registration details. Please send the email to complete your registration.');
-            }, 500);
-
-            // Note: In a production environment, you would typically send this to a backend server
-            // that would handle email sending via services like SendGrid, AWS SES, or Nodemailer
-            
-            // For a real implementation without a backend, you could use:
-            // 1. EmailJS (https://www.emailjs.com/)
-            // 2. Formspree (https://formspree.io/)
-            // 3. Google Forms API
-            // Example with EmailJS:
-            /*
-            emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', formData)
-                .then(function(response) {
-                    document.getElementById('registrationForm').style.display = 'none';
-                    document.getElementById('successMessage').style.display = 'block';
-                }, function(error) {
-                    alert('Registration failed. Please try again or contact us directly.');
-                });
-            */
-        }
     </script>
 </body>
 </html>
